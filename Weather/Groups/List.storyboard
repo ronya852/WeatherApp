@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eVL-I5-crP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LIST OF CITIES-->
+        <scene sceneID="ugr-mK-ZuA">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="RS3-Tf-47j" customClass="ListViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7B0-oW-lzm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gB3-gc-Kxo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListTableViewCell" id="QDd-Sb-xGP" customClass="ListTableViewCell" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QDd-Sb-xGP" id="CLa-9c-nI1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-d8-hik">
+                                                    <rect key="frame" x="32" y="10.5" width="200" height="22.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="BMZ-ji-Xha"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UY-at-wdp">
+                                                    <rect key="frame" x="353.5" y="7" width="28.5" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8UY-at-wdp" secondAttribute="trailing" constant="12" id="Cwg-Kp-PR3"/>
+                                                <constraint firstItem="xuN-d8-hik" firstAttribute="leading" secondItem="CLa-9c-nI1" secondAttribute="leadingMargin" constant="12" id="OFY-Bw-NJL"/>
+                                                <constraint firstItem="xuN-d8-hik" firstAttribute="centerY" secondItem="CLa-9c-nI1" secondAttribute="centerY" id="dcN-Xh-TfA"/>
+                                                <constraint firstItem="8UY-at-wdp" firstAttribute="centerY" secondItem="CLa-9c-nI1" secondAttribute="centerY" id="mWI-cM-y4c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabelCell" destination="xuN-d8-hik" id="Voa-kv-AUh"/>
+                                            <outlet property="temperatureLabelCell" destination="8UY-at-wdp" id="Qxs-lQ-edv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sjD-eG-SXH">
+                                <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU DON'T HAVE ANY CITY IN YOUR LIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkp-TU-3em">
+                                <rect key="frame" x="24" y="376" width="366" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MDE-82-gyM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sjD-eG-SXH" firstAttribute="centerY" secondItem="MDE-82-gyM" secondAttribute="centerY" id="5mD-nU-4DX"/>
+                            <constraint firstItem="MDE-82-gyM" firstAttribute="trailing" secondItem="gB3-gc-Kxo" secondAttribute="trailing" id="D8x-xy-soV"/>
+                            <constraint firstItem="MDE-82-gyM" firstAttribute="trailing" secondItem="wkp-TU-3em" secondAttribute="trailing" constant="24" id="MIh-Mj-uc8"/>
+                            <constraint firstItem="gB3-gc-Kxo" firstAttribute="leading" secondItem="MDE-82-gyM" secondAttribute="leading" id="QzC-O4-Ks8"/>
+                            <constraint firstItem="gB3-gc-Kxo" firstAttribute="top" secondItem="MDE-82-gyM" secondAttribute="top" id="Tjt-ii-fIC"/>
+                            <constraint firstItem="wkp-TU-3em" firstAttribute="leading" secondItem="MDE-82-gyM" secondAttribute="leading" constant="24" id="Xwg-eJ-5AU"/>
+                            <constraint firstItem="gB3-gc-Kxo" firstAttribute="centerX" secondItem="MDE-82-gyM" secondAttribute="centerX" id="ixj-Rw-Vpm"/>
+                            <constraint firstItem="MDE-82-gyM" firstAttribute="bottom" secondItem="gB3-gc-Kxo" secondAttribute="bottom" id="rrM-61-bIG"/>
+                            <constraint firstItem="sjD-eG-SXH" firstAttribute="centerX" secondItem="MDE-82-gyM" secondAttribute="centerX" id="sdZ-19-q2Z"/>
+                            <constraint firstItem="wkp-TU-3em" firstAttribute="centerX" secondItem="MDE-82-gyM" secondAttribute="centerX" id="t4O-Xf-OP6"/>
+                            <constraint firstItem="gB3-gc-Kxo" firstAttribute="centerY" secondItem="MDE-82-gyM" secondAttribute="centerY" id="uw4-NC-2Er"/>
+                            <constraint firstItem="wkp-TU-3em" firstAttribute="centerY" secondItem="MDE-82-gyM" secondAttribute="centerY" id="wOE-bp-5TR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="LIST OF CITIES" id="CBk-w0-l6k">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="fuD-Uv-vho">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="R9f-dY-PWe">
+                                <rect key="frame" x="20" y="10.5" width="53" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Back" image="chevron.backward" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="RS3-Tf-47j" eventType="touchUpInside" id="ZtX-IA-LgR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="mNe-E9-Xcv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mZL-S1-dBi">
+                                <rect key="frame" x="374" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="RS3-Tf-47j" eventType="touchUpInside" id="9tf-Ai-guR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="sjD-eG-SXH" id="2tw-G9-jLQ"/>
+                        <outlet property="startLabel" destination="wkp-TU-3em" id="Cf4-KV-Fal"/>
+                        <outlet property="tableView" destination="gB3-gc-Kxo" id="w7Y-M7-lUK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-r4-6TD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708.69565217391312" y="38.839285714285715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MML-n5-3O7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eVL-I5-crP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jt8-jW-11r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RS3-Tf-47j" kind="relationship" relationship="rootViewController" id="i9B-Uw-rtF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azw-hR-3H9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201.44927536231884" y="38.839285714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
