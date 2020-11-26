@@ -21,7 +21,7 @@ class ListViewController: UIViewController {
     
     // - Data
     private let baseURL = "https://api.openweathermap.org/"
-    private let apiKey = "e268f2531a45ff5cc21c7b0d7433eecd"
+    private let apiKey = "" // YOUR API KEY
     var model = [WeatherViewModel]()
     
     override func viewDidLoad() {
